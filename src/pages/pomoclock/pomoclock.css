@@ -1,0 +1,25 @@
+ .PomoClock{
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .pomobutton {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pomobutton:hover {
+    background-color: #45a049;
+  }
+  .pomo-video{
+    height: 80%;
+    width: 90%;
+    margin-top: -80px;
+
+  }

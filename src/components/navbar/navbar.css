@@ -1,0 +1,125 @@
+.navbar {
+  display: flex;
+  position: absolute;
+  left: 13%;
+  width: fit-content;
+  z-index: 1;
+}
+
+.logo {
+  margin-top: 14px;
+  width: 35%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20%;
+  font-size: 20px;
+  text-decoration: none;
+  text-shadow: 1px 1px 4px rgb(249, 248, 248);
+}
+
+.nav-link {
+  list-style: none;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(253, 253, 253);
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  z-index: 1;
+}
+
+.nav-dropdown li {
+  display: block;
+}
+
+.nav-dropdown li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-dropdown li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown menu on hover */
+.nav-link:hover .nav-dropdown {
+  display: block;
+}
+
+.nav-button {
+  padding: 9% 40%;
+  font-size: 20px;
+  background-color: #0f0f0e;
+  font-weight: bold;
+  color: #e0d7d7;
+  border-radius: 6px;
+  border: 2px solid #5FD5F6; /* Set a transparent border initially */
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the border and shadow effect */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23); /* 3D shadow effect */
+}
+
+.nav-button:hover {
+  /* border-image: linear-gradient(to right, #fbf9f9, #e0d7d7); Gradient effect on hover */
+  border-image-slice: 3; /* Adjusts the gradient's size */
+  box-shadow: 0px 14px 28px rgba(17, 133, 241, 0.686), 0px 10px 10px rgba(0, 0, 0, 0.22); 
+  border-radius: 10px;/* Increase shadow on hover */
+}
+/* Add this to your existing CSS */
+.burger {
+  display: none;
+  cursor: pointer;
+ }
+ 
+ .burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+ }
+ 
+ @media screen and (max-width: 1080px) {
+  .nav-links {
+     display: none; /* Hide the links by default on mobile */
+     flex-direction: column;
+     width: 80%;
+     position: absolute;
+     top: 60%;
+     right: 23%;
+     background-color: #181818;
+     border-radius: 20px;
+     gap:10%;
+
+  }
+  .logo{
+    width: 30vh;
+  }
+ .nav-button{
+  padding: 2%;
+  font-size: 14px;
+  margin-top: 8%;
+ }
+  .nav-links.show {
+     display: flex;
+     flex-direction: column;
+  }
+ 
+  .burger {
+     display: block;
+     margin-top: 5%; /* Show the burger icon on mobile */
+  }
+ }

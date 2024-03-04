@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Armata:regular);
+
+.cvboard{
+    background-color: #010001;
+    color: aliceblue;
+    /* margin-bottom: auto; */
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+.cvboard-title{
+    color: #dbf6fd;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 4%;
+    font-family: 'armata';
+    font-weight: bold;
+}
+.cv-video{
+    width: 100%;
+}
+.cvboard-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center; 
+    width: 75%;
+    margin: 0 auto; 
+    margin-bottom: 9%;
+    gap: 3%;
+}
+.cvboard-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #181818;
+    border-radius: 20px;
+    border-color: #61DAFB;
+    border-width: 0.3ch;
+    border-style: solid;
+    padding: 7%;
+   }
+.cv-title{
+    font-weight: bold;
+    font-size: 25px;
+}
+.cv-description{
+   width: 75%;
+   font-size: 16px;
+}
+.cv-file-icon{
+    height: 6vh;
+    padding: 3%;
+
+    align-items: center;
+    cursor: pointer;
+}
+.cv-file{
+    margin: 5%;
+    padding: 3%;
+    border-radius: 20px;
+    border-width: 0.3ch;
+    border-style: dotted;
+    border-color:#61DAFB;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+   .cv-keylang {
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .cv-language {
+    margin: 5px;
+    max-width: calc(35% +10px); 
+    background-color: #e33405;
+    border-radius: 17px;
+    padding: 2%;
+    align-items: center;
+  }
+  .cv-add-button{
+    font-size: 30px;
+    color: #f5f5f5;
+    background-color: #e33405;
+    border-radius: 10px;
+    padding: 0.6% 2% ;
+    border: none;
+    position: absolute;
+    top: 120%;
+    left: 77%;
+    cursor: pointer;
+    font-family: 'armata';
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the border and shadow effect */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23); /* 3D shadow effect */ 
+  }
+  .cv-add-button:hover{
+    border-image-slice: 3; /* Adjusts the gradient's size */
+    box-shadow: 0px 5px 14px rgba(212, 223, 234, 0.686), 0px 5px 5px rgba(0, 0, 0, 0.22); 
+    border-radius: 10px;
+  }
