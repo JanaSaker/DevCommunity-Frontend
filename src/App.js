@@ -10,6 +10,7 @@ import OwnerJobs from './pages/jobboard/userjobs.jsx';
 import CVBoard from './pages/cv/cv.jsx';
 import DevTube from './pages/DevTube/DevTube.jsx';
 import PomoClock from './pages/pomoclock/pomoclock.jsx';
+import AddKeyLangPage from './admin/keylang.jsx';
 const Layout = () => {
   return (
     <>
@@ -32,6 +33,7 @@ const App = () => {
         <Route path='/cvbank' element={<CVBoard/>}/>
         <Route path='/devtube' element={<DevTube/>}/>
         <Route path='/pomoclock' element={<PomoClock/>}/>
+        <Route path='/admin' element={<AddKeyLangPage/>}/>
 
         </Route>
       </Routes>
