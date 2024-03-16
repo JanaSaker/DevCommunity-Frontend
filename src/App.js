@@ -24,6 +24,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+      <Route path='/admin' element={<AddKeyLangPage/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Layout />}>
@@ -33,7 +34,6 @@ const App = () => {
         <Route path='/cvbank' element={<CVBoard/>}/>
         <Route path='/devtube' element={<DevTube/>}/>
         <Route path='/pomoclock' element={<PomoClock/>}/>
-        <Route path='/admin' element={<AddKeyLangPage/>}/>
 
         </Route>
       </Routes>
