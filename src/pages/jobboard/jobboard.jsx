@@ -26,7 +26,7 @@ const JobBoard = () => {
  useEffect(() => {
     const fetchKeylangs = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/keylangs');
+        const response = await axios.get(`${process.env.REACT_APP_API_ENDPOINT}api/keylangs`);
         setKeylangs(response.data.keyLangs || []);
       } catch (error) {
         console.error('Error fetching key languages:', error);
@@ -38,7 +38,7 @@ const JobBoard = () => {
 
  const fetchJobs = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/jobs');
+      const response = await axios.get(`${process.env.REACT_APP_API_ENDPOINT}api/jobs`);
       setJobs(response.data.jobs || []);
     } catch (error) {
       console.error('Error fetching Jobs:', error);
@@ -92,7 +92,7 @@ const JobBoard = () => {
        },
      };
      // Send the POST request to add a new job
-     const response = await axios.post('http://localhost:4000/api/jobs', jobData, config);
+     const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}api/jobs`, jobData, config);
      if (response && response.data) {
        // Update the state with the newly created job
        setJobs([...jobs, response.data.job]);

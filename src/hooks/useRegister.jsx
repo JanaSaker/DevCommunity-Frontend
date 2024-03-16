@@ -19,7 +19,7 @@ export const useRegister = () => {
     formData.append('profile', profile); // Assuming 'profile' is a File object
 
     try {
-      const response = await fetch('http://localhost:4000/api/register', {
+      const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/api/register', {
         method: "POST",
         body: formData,
       });

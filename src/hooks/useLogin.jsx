@@ -1,20 +1,19 @@
-// useLogin.jsx
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
- const [error, setError] = useState(null);
- const [loading, setLoading] = useState(false);
- const { dispatch } = useAuthContext();
- const navigate = useNavigate();
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const { dispatch } = useAuthContext();
+  const navigate = useNavigate();
 
- const signIn = async (username, password) => {
+  const signIn = async (username, password) => {
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:4000/api/login', {
+      const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/api/login', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -48,7 +47,7 @@ export const useLogin = () => {
       setLoading(false);
       setError('Network error, please try again');
     }
- };
+  };
 
- return { signIn, loading, error };
+  return { signIn, loading, error };
 };

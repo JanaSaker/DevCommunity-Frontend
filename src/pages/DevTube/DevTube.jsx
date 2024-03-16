@@ -27,7 +27,7 @@ const DevTube = () => {
     useEffect(() => {
         const fetchKeylangs = async () => {
           try {
-            const response = await axios.get('http://localhost:4000/api/keylangs');
+            const response = await axios.get(`${process.env.REACT_APP_API_ENDPOINT}/api/keylangs`);
             setKeylangs(response.data.keyLangs || []);
           } catch (error) {
             console.error('Error fetching key languages:', error);
@@ -39,7 +39,7 @@ const DevTube = () => {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/api/courses');
+                const response = await axios.get(`${process.env.REACT_APP_API_ENDPOINT}/api/courses`);
                 setCourses(response.data.courses || []);
             } catch (error) {
                 console.error('Error fetching courses:', error);
@@ -90,7 +90,7 @@ const DevTube = () => {
               },
             };
             // Send the POST request to add a new course
-            const response = await axios.post('http://localhost:4000/api/courses', courseData, config);
+            const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}api/courses`, courseData, config);
             if (response && response.data) {
               // Update the state with the newly created course
               setCourses([...courses, response.data.course]);

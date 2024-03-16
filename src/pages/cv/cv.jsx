@@ -21,11 +21,12 @@ const CVBoard = () => {
     keylangs: [],
   });
   const isLoggedIn = true; // Placeholder for determining if the user is logged in
+  const apiUrl = process.env.REACT_APP_API_ENDPOINT;
 
   useEffect(() => {
     const fetchKeylangs = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/keylangs');
+        const response = await axios.get(`${apiUrl}/api/keylangs`);
         setKeylangs(response.data.keyLangs || []);
       } catch (error) {
         console.error('Error fetching key languages:', error);
@@ -33,11 +34,11 @@ const CVBoard = () => {
       }
     };
     fetchKeylangs();
-  }, []);
+  }, [apiUrl]);
 
   const fetchCVs = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/cvs');
+      const response = await axios.get(`${apiUrl}/api/cvs`);
       setCvs(response.data.cvs || []);
     } catch (error) {
       console.error('Error fetching CVs:', error);
@@ -47,7 +48,7 @@ const CVBoard = () => {
 
   useEffect(() => {
     fetchCVs();
-  }, []);
+  }, [apiUrl]);
 
   const showMoreCvs = () => {
     setVisibleCvs(visibleCvs + 3); // Increase the number of visible CVs by 3
@@ -55,8 +56,8 @@ const CVBoard = () => {
 
   if (error) {
     return <div>Error: {error.message}</div>;
- }
- 
+  }
+
   const openModal = (file) => {
     setSelectedFile(file);
     setModalIsOpen(true);
@@ -105,7 +106,7 @@ const CVBoard = () => {
         },
       };
       // Send the POST request to add a new CV
-      const response = await axios.post('http://localhost:4000/api/cvs', formData, config);
+      const response = await axios.post(`${apiUrl}/api/cvs`, formData, config);
       if (response && response.data) {
         // Update the state with the newly created CV
         setCvs([...cvs, response.data.cv]);
@@ -164,7 +165,7 @@ const CVBoard = () => {
   {cv.file.endsWith('.pdf') ? (
     <img className='cv-file-icon' src={PDF} alt="PDF" onClick={() => openModal(cv.file)}  />
   ) : (
-    <img className='cv-file-icon-icon' src={`http://localhost:4000/files/${cv.file}`} alt="CV" />
+<img className='cv-file-icon-icon' src={`${apiUrl}/files/${cv.file}`} alt="CV" />
   )}
 </div>
 
@@ -202,7 +203,7 @@ const CVBoard = () => {
         }}
       >
         <button onClick={closeModal}>Close</button>
-        <iframe src={`http://localhost:4000/files/${selectedFile}`} style={{ width: '70vh', height: '70vh' }} title="CV" />
+        <iframe src={`${apiUrl}/files/${selectedFile}`} style={{ width: '70vh', height: '70vh' }} title="CV" />
       </Modal>
       {/* ///////////////////////////////////////////////////// */}
       {isLoggedIn && (
