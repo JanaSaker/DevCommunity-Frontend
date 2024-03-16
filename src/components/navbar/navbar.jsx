@@ -30,7 +30,7 @@ const Navbar = () => {
       </div>
       <ul className={`nav-links ${showNav ? 'show' : ''}`}>
         <li className='nav-link'>
-          <NavLink to="/home" exact activeClassName="active">Home</NavLink>
+          <NavLink to="/" exact activeClassName="active">Home</NavLink>
         </li>
         <li className='nav-link'>
           <NavLink className={({ isActive }) => isActive ? 'notactive' : undefined} to="/jobs" >JobBoard</NavLink>

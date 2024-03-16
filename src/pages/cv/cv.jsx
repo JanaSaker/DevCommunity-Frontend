@@ -53,6 +53,10 @@ const CVBoard = () => {
     setVisibleCvs(visibleCvs + 3); // Increase the number of visible CVs by 3
   };
 
+  if (error) {
+    return <div>Error: {error.message}</div>;
+ }
+ 
   const openModal = (file) => {
     setSelectedFile(file);
     setModalIsOpen(true);
@@ -153,12 +157,12 @@ const CVBoard = () => {
       <div className='cvboard-title'>Recent CVs</div>
       <div className='cvboard-container'>
         {cvs.slice(0, visibleCvs).map((cv, index) => (
-          <div key={cv.id} className='cvboard-box' onClick={() => openModal(cv.file)}>
+          <div key={cv.id} className='cvboard-box'>
             <div className='cv-title'>{cv.title}</div>
             <div className='cv-description'>{cv.description}</div>
-            <div className='cv-file'>
+            <div className='cv-file'  >
   {cv.file.endsWith('.pdf') ? (
-    <img className='cv-file-icon' src={PDF} alt="PDF" />
+    <img className='cv-file-icon' src={PDF} alt="PDF" onClick={() => openModal(cv.file)}  />
   ) : (
     <img className='cv-file-icon-icon' src={`http://localhost:4000/files/${cv.file}`} alt="CV" />
   )}
@@ -170,11 +174,12 @@ const CVBoard = () => {
       ))}
     </div>          </div>
         ))}
-         </div>
+                      </div>
+
         {visibleCvs < cvs.length && (
           <button className='cv-showmore' onClick={showMoreCvs}>Show More</button>
         )}
-     
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -197,8 +202,9 @@ const CVBoard = () => {
         }}
       >
         <button onClick={closeModal}>Close</button>
-        <iframe src={`http://localhost:4000/files/${selectedFile}`} style={{ width: '100%', height: '100%' }} title="CV" />
+        <iframe src={`http://localhost:4000/files/${selectedFile}`} style={{ width: '70vh', height: '70vh' }} title="CV" />
       </Modal>
+      {/* ///////////////////////////////////////////////////// */}
       {isLoggedIn && (
         <button className='cv-add-button' onClick={openNewCvModal}>Add CV</button>
       )}

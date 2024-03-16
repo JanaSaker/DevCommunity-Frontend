@@ -20,7 +20,7 @@ export const useLogout = () => {
 
       // Navigate to the home page after a short delay to allow the logout process to complete
       setTimeout(() => {
-        navigate('/home');
+        navigate('/');
         setLoading(false); // Set loading to false after navigation
       }, 2000); // Adjust the delay as needed
     } catch (error) {

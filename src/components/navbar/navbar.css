@@ -37,7 +37,7 @@ a {
   position: absolute;
   display: none;
   background-color: #f9f9f9;
-  min-width: 120px;
+  min-width: 10px;
   z-index: 1;
 }
 

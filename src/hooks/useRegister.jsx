@@ -34,7 +34,7 @@ export const useRegister = () => {
       dispatch({ type: "LOGIN", payload: json });
 
       setError("Registration successful");
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       setError(error.message);
     } finally {

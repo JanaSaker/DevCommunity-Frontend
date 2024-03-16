@@ -38,7 +38,7 @@ export const useLogin = () => {
           dispatch({ type: 'LOGIN', payload: json.data });
           setError('Authentication successful');
           console.log('authentication successful');
-          navigate('/home');
+          navigate('/');
         }
       } else {
         setLoading(false);

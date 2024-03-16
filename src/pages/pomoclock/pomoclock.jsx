@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './pomoclock.css';
-import videoJob from './98087a379cf04a1389c971f0ac43a122.mov';
+import videoJob from './pomoclock-video (2).mov';
 
 function PomoClock() {
   const [focusDuration, setFocusDuration] = useState(25);
@@ -73,22 +73,22 @@ function PomoClock() {
           <p className="Phase">Phase: {currentPhase}</p>
         </div>
         <div className="Settings">
-          <label>
-            Focus Duration (minutes):
-            <input type="number" value={focusDuration} onChange={(e) => setFocusDuration(parseInt(e.target.value))} />
+          <label className='pomolabel'>
+            Focus Duration (min):
+            <input className='pomoinput' type="number" value={focusDuration} onChange={(e) => setFocusDuration(parseInt(e.target.value))} />
+          </label >
+          <label className='pomolabel'>
+            Break Duration (min):
+            <input className='pomoinput' type="number" value={breakDuration} onChange={(e) => setBreakDuration(parseInt(e.target.value))} />
           </label>
-          <label>
-            Break Duration (minutes):
-            <input type="number" value={breakDuration} onChange={(e) => setBreakDuration(parseInt(e.target.value))} />
-          </label>
-          <label>
+          <label className='pomolabel'>
             Cycles:
-            <input type="number" value={cycles} onChange={(e) => setCycles(parseInt(e.target.value))} />
+            <input className='pomoinput' type="number" value={cycles} onChange={(e) => setCycles(parseInt(e.target.value))} />
           </label>
         </div>
         <div className="Controls">
-          {!isRunning ? <button className='StartButton' onClick={startTimer}>Start</button> : <button onClick={pauseTimer}>Pause</button>}
-          <button onClick={resetTimer}>Reset</button>
+          {!isRunning ? <button className='StartButton' onClick={startTimer}>Start</button> : <button className='PauseButton' onClick={pauseTimer}>Pause</button>}
+          <button className='Reset-Button' onClick={resetTimer}>Reset</button>
         </div>
       </div>
     </div>

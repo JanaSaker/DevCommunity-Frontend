@@ -22,17 +22,14 @@ const Footer = () => {
 <div className='footer-left'>
 <ul className="footer-links">
         <li className='nav-link'>
-          <NavLink to="/home" exact activeClassName="active">Home</NavLink>
+          <NavLink to="/" exact activeClassName="active">Home</NavLink>
         </li>
         <li className='nav-link'>
-          <NavLink className={({ isActive }) => isActive ? 'notactive' : undefined} to="/" >JobBoard</NavLink>
+          <NavLink className={({ isActive }) => isActive ? 'notactive' : undefined} to="/jobs" >JobBoard</NavLink>
           <ul className="nav-dropdown">
             <li className='nav-list'><NavLink to="/cvbank" activeClassName="active">Cv Bank</NavLink></li>
             <li className='nav-list'><NavLink to="/jobs" activeClassName="active">Jobs</NavLink></li>
           </ul>
-        </li>
-        <li className='nav-link'>
-          <NavLink to="/insights" activeClassName="active">Insights</NavLink>
         </li>
         <li className='nav-link'>
           <NavLink to="/devtube" activeClassName="active">DevTube</NavLink>

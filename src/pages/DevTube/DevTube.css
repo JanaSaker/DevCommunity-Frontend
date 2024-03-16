@@ -1,0 +1,179 @@
+.courseboard{
+    background-color: #010001;
+}
+.devtube{
+    display: flex;
+    flex-direction: column;
+}
+
+.courseboard-title{
+    color: #dbf6fd;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 4%;
+    font-family: 'armata';
+    font-weight: bold;
+}
+.courseboard-container-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1%;
+    font-size: 26px;
+    color: #dbf6fd;
+}
+.coursedescription{
+    width: 95%;
+    font-size: 16px;
+    font-weight: 300;
+}
+.course-keylang{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 15px;
+}
+.course-language{    margin: 5px;
+    max-width: calc(35% +10px); 
+    background-color: #df3a03f5;
+    border-radius: 10px;
+    padding: 2%;
+    align-items: center;
+}
+.coursesubmissionDate{
+    color: #a3ebffd2;
+    text-align: end;
+    text-align: end;
+}
+.coursetitle{
+    position: sticky; 
+    top: -31px;
+    background-color: #181818;
+      font-weight: 700;
+      font-size: 26px;
+      text-align: center;
+}
+.coursesubtitle{
+    color: #D6D2D2;
+    font-size: 20px;
+}
+
+.courseboard-box{
+    display: grid;
+    background-color: #181818;
+    border-radius: 20px;
+    border-color: #61DAFB;
+    border-width: 0.3ch;
+    border-style: solid;
+    padding: 7%;
+    width: 38vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.courseboard-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 6px 2px rgba(97, 218, 251, 0.5); 
+}
+.courseboard-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.courseboard-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.courseboard-box::-webkit-scrollbar-thumb {
+    background-color: #61dafbeb;
+    border-radius: 57px; 
+}
+.courseboard-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center; 
+    width: 75%;
+    margin:auto; 
+    margin-bottom: auto;
+    gap: 3%;
+    padding-bottom: 5%;
+}
+.course-video-tube{
+    width:350px;
+    height: 230px;
+}
+.course-text{
+    color: aliceblue;
+}
+.course-showmore{
+    color: #f5f5f5;
+    background-color: #010001;
+    border:none;
+    cursor: pointer;
+    font-family: 'armata';
+    font-size: 18px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    margin-bottom: 3%;
+    position: relative;
+    /* margin-left: 80%; */
+    z-index: 2;
+}
+.course-add-button{
+    font-size: 20px;
+    color: #f5f5f5;
+    background-color:#00A3D6 ;
+    border-radius: 10px;
+    padding: 0.6% 2% ;
+    /* border-color: #61DAFB; */
+    position: absolute;
+    top: 120%;
+    left: 77%;
+    cursor: pointer;
+    font-family: 'armata';
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the border and shadow effect */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23); /* 3D shadow effect */ 
+    font-weight:600;
+}
+.course-add-button:hover{
+    border-image-slice: 3; /* Adjusts the gradient's size */
+    box-shadow: 0px 5px 14px rgba(212, 223, 234, 0.686), 0px 5px 5px rgba(0, 0, 0, 0.22); 
+    border-radius: 10px;
+  }
+  .course-showmore:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 768px) {
+    .courseboard-container {
+      grid-template-columns: repeat(1, 1fr); 
+      gap:1%;
+    }
+    .course-add-button{
+        top:37% ;
+        font-size: 12px;
+    }
+    .coursesubmissionDate,
+    .coursedescription,
+    .course-keylang,
+    .course-showmore {
+      font-size: 12px; /* Decrease font size for smaller screens */
+    }
+    .coursetitle{
+        font-size: 16px;
+    }
+    .courseboard-title{
+        font-size: 2px;
+    }
+    .coursesubtitle{
+        font-size: 16px;
+    }
+    .courseboard-box{
+        gap: 0;
+    }
+    .course-video-tube{
+        width:280px;
+        height: fit-content;
+    }
+  }
+ 
