@@ -23,7 +23,7 @@ export const useRegister = () => {
         method: "POST",
         body: formData,
       });
-
+      
       const json = await response.json();
 
       if (!response.ok) {

@@ -82,8 +82,6 @@ margin-bottom: 80px;
     justify-content: space-evenly;
     width:640px;
     flex-wrap:wrap;
-
-    
 }
 .home-box-container{
     display: flex;
@@ -112,12 +110,12 @@ margin-bottom: 80px;
     font-size: 14px;
  } 
  .home-job-img1{
-    max-height: 28vh;
+    height: 28vh;
     width: 20vh;
  }
  .home-job-text{
     font-size: 11px;
-    max-width:27vh;
+    max-width:49vh;
 
  }
  .home-job-btn{

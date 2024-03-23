@@ -90,7 +90,7 @@ const DevTube = () => {
               },
             };
             // Send the POST request to add a new course
-            const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}api/courses`, courseData, config);
+            const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}/api/courses`, courseData, config);
             if (response && response.data) {
               // Update the state with the newly created course
               setCourses([...courses, response.data.course]);

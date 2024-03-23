@@ -21,7 +21,7 @@ const CVBoard = () => {
     keylangs: [],
   });
   const isLoggedIn = true; // Placeholder for determining if the user is logged in
-  const apiUrl = process.env.REACT_APP_API_ENDPOINT;
+  const apiUrl = 'http://localhost:4000'
 
   useEffect(() => {
     const fetchKeylangs = async () => {
